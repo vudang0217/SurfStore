@@ -1,0 +1,77 @@
+	//if there is no index.txt, create new file in the system 
+		if(index_file.createNewFile()){
+			System.out.println("CREATED index.txt!");
+		} 
+		else{
+			System.out.println("FOUND Existing index.txt");
+		}
+		
+		//loop through the localindex file 
+		Scanner scanner =  new Scanner(index_file);
+		while(scanner.hasNextLine()){
+			String[] scanner_index_line = scanner.nextLine().split("," , 0);
+			set_localIndex.add(scanner_index_line[0]);//put file names in set
+
+			Vector scanner_ver_string = new Vector();
+
+			Integer scanner_version = new Integer(Integer.parseInt(scanner_index_line[1]));
+			scanner_ver_string.add(scanner_version);
+			
+			String[] scanner_hash_list = scanner_index_line[2].split(" ",0);
+			Vector<String> scanner_hash_string_vect = new Vector<String>(Arrays.asList(scanner_hash_list));
+			scanner_ver_string.add(scanner_hash_string_vect);
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBB
+
+BBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBB
+BBBBBBB
+BBBBBBBBBBBBBB
+
+		// AS SETS : 
+		// BD = base directory 
+		// RI = remote index
+		// LI = local index
+		// for case 1, find union of BD and LI and find set difference between that and RI  
+
+		scanner.close();
+      } catch (Exception exception) {
+         System.err.println("Client: " + exception);
+      }
+   }
+}
